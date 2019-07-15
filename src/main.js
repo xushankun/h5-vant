@@ -19,7 +19,6 @@ router.beforeEach((to, from, next) => {
         document.title = to.meta.title
     }
     if(to.matched.length === 0) {
-        console.log('404')
         next({path:'/404'})
         return
     }
