@@ -1,16 +1,9 @@
 <template>
     <div class="login-wrap">
-        <img class="logo" src="@/assets/images/login/login-logo.png" alt="">
+<!--        <img class="logo" src="@/assets/images/login/login-logo.png" alt="">-->
         <div class="form-block">
             <div class="form-input">
-                <van-field v-model="form.mobile" maxlength="11" clearable placeholder="用户名/手机号"/>
-            </div>
-            <div class="form-input pr">
-                <van-field v-model="form.password" clearable :type="isEye ? 'text' : 'password'" placeholder="密码"/>
-                <i class="iconfont eye-icon"
-                   :class="[isEye ? 'icon-yincang1 active' : 'icon-yincang']"
-                   v-if="form.password"
-                   @click="isEye = !isEye"></i>
+                <van-field v-model="name"  clearable placeholder="用户名"/>
             </div>
             <van-button type="primary" round size="normal"
                         :disabled="isDisabled"
@@ -27,13 +20,13 @@
         name: "login",
         data() {
             return {
-                form: {
-                    mobile: '',
-                    password: ''
-                },
                 isEye: false,      // 是否显示密码
-                isDisabled:false    // 按钮是否可点击状态
+                isDisabled:false,    // 按钮是否可点击状态
+                name:'shankun'
             }
+        },
+        mounted(){
+
         },
         methods: {
             ...mapActions(["signIn"]),
@@ -42,22 +35,16 @@
                 if(this.isDisabled) {
                     return
                 }
-                if (!this.form.mobile) {
-                    this.$toast('手机号不能为空')
-                    return
-                }
-                if (!this.form.password) {
-                    this.$toast('密码不能为空')
+                if (!this.name) {
+                    this.$toast('name不能为空')
                     return
                 }
                 this.isDisabled = true
-                this.api.login(this.form).then(res=>{
-                    if(res.code === 0) {
-                        this.$toast.success('登录成功');
-                        this.signIn(res).then(()=>{
-                            this.$router.push("/");
-                        })
-                    }
+                this.api.getUserData({userName:this.name}).then(res=>{
+                    this.$toast.success('登录成功');
+                    this.signIn(res.data).then(()=>{
+                        this.$router.push("/");
+                    })
                     this.isDisabled = false
                 })
             }
@@ -117,17 +104,6 @@
                 width: 100%;
                 margin-top: 85px;
             }
-            .bottom-link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 10px;
-                color: #666;
-            }
-        }
-        .link-sty {
-            color: #14a9fb;
-            font-size: 10px;
         }
     }
 </style>

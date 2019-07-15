@@ -6,7 +6,9 @@ import { request } from './config'
 
 export default {
     // 登录
-    login: obj => request('/lr-api/sys/login', "post", obj),
+    login: obj => request('/accesstoken', "post", obj),
+    // 获取用户详情
+    getUserData: obj => request('/user/'+ obj.userName, "get", obj),
     // ----------------------------------问答-----------------------------------
     // 问答列表
     qaList:obj => request('/lr-api/app/question/pageList', "get", obj)

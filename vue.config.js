@@ -38,9 +38,9 @@ module.exports = {
         https: false,
         hotOnly: false,
         proxy: {
-            "/lr-api": {
+            "/api": {
                 target: process.env.VUE_APP_BASEURL,    // 接口baseUrl
-                pathRewrite: {'^/lr-api' : ''},
+                pathRewrite: {'^/api' : ''},
                 changeOrigin: true
             }
         }

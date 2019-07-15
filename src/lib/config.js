@@ -7,7 +7,7 @@ import axios from 'axios'
 import Qs from 'qs'
 import store from '../store/store'
 import { Notify } from 'vant';
-const _baseURL = process.env.VUE_APP_BASEURL
+const _baseURL = process.env.VUE_APP_BASEURL + '/api/v1'
 import router from '../router'
 
 axios.interceptors.response.use(function (res) {
@@ -38,8 +38,8 @@ var config = {
         //为了避免qs格式化时对内层对象的格式化先把内层的对象转为
         data.CustData = JSON.stringify(data.CustData);
         //由于使用的form-data传数据所以要格式化
-        // data = Qs.stringify(data);
-        data = JSON.stringify(data);
+        data = Qs.stringify(data);
+        // data = JSON.stringify(data);
         // console.log(data)
         return data;
     }],
@@ -63,7 +63,8 @@ var config = {
     }],
 
     headers: {
-        'Content-Type':'application/json',
+        // 'Content-Type':'application/json',
+        'Content-Type':'application/x-www-form-urlencoded',
         'token': ''
     },//包含了http请求的各种信息
 

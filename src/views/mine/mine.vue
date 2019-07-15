@@ -6,10 +6,10 @@
                         class="lr-btn"
                         @click="signOutF">退出</van-button>
         </div>
-        <div class="mt10 mb10">问答列表</div>
-        <div class="mb10" v-for="(item,index) in qaData.list" :key="index">
-            <div>1.{{item.title}}</div>
-            <div>  {{item.content}}</div>
+        <div class="mt10 mb10">内容</div>
+        <div>
+            <img :src="loginData.avatar_url">
+            <div>用户名：{{loginData.loginname}}</div>
         </div>
     </div>
 
@@ -21,11 +21,11 @@
         name: "mine",
         data(){
             return {
-                qaData:[]
+                userData:{}
             }
         },
         mounted(){
-            this.qaList()
+
         },
         methods:{
             ...mapActions(["signOut"]),
@@ -34,26 +34,10 @@
                     this.$toast('已退出')
                     this.$router.push("/login");
                 })
-            },
-            qaList() {
-                let obj = {
-                    pageIndex:1,
-                    pageSize:10,
-                    questionType:1,
-                    categoryId:1,
-                    status:0
-                }
-                this.api.qaList(obj).then(res=>{
-                    console.log(obj)
-                    if (res.code === 0) {
-                        this.qaData = res.data
-                        console.log(res.data)
-                    }
-                })
             }
         },
         computed: {
-            ...mapGetters(["isLogin"])
+            ...mapGetters(["isLogin","loginData"])
         }
     }
 </script>
