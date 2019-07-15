@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+//定位
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+//clearfix清楚浮动
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: '';
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+//margin
+.marginCenter {
+  margin: 0 auto;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.mt5 {
+  margin-top: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+
+//vant组件相关全局调整
+.lr-btn {
+  height: 40px;
+  line-height: 40px;
+  background: #14a9fb;
+  font-size: 16px;
+  border: 0;
+  letter-spacing: 2px;
+  &.lr-disabled {
+    background: #f0f0f0;
+    border: 1px solid #e3e3e3;
+    color: #aaa;
+  }
+}
