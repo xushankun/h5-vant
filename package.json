@@ -1,6 +1,7 @@
 {
   "name": "h5-vant",
   "version": "0.1.0",
+  "author": "xusk <lovexsk@qq.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
