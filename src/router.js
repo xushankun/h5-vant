@@ -20,13 +20,13 @@ export default new Router({
             path: '/404',
             name: '404',
             meta:{title:'访问路径无效',noLogin:true},
-            component: () => import(/* webpackChunkName: "register" */ './components/404.vue')
+            component: () => import(/* webpackChunkName: "404" */ './components/404.vue')
         },
         {
             path: '/mine',
             name: 'mine',
             meta:{title:'我的'},
-            component: () => import(/* webpackChunkName: "about" */ './views/mine/mine.vue')
+            component: () => import(/* webpackChunkName: "mine" */ './views/mine/mine.vue')
         }
     ]
 })
