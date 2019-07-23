@@ -39,7 +39,7 @@ module.exports = {
         hotOnly: false,
         proxy: {
             "/api": {
-                target: process.env.VUE_APP_BASEURL,    // 接口baseUrl
+                target: process.env.VUE_APP_BASEURL,    // 接口baseUrl   【参考链接：https://blog.csdn.net/u012302552/article/details/81742907】
                 pathRewrite: {'^/api' : ''},
                 changeOrigin: true
             }
