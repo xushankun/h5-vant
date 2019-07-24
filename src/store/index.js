@@ -5,6 +5,7 @@ import createPersistedPlugin from './plugins/createPersistedPlugin.js'      // �
 const persistedPlugin = createPersistedPlugin()
 Vue.use(Vuex);
 export default new Vuex.Store({
+    strict: process.env.NODE_ENV !== 'production',          //非生产模式下开启严格模式【监测不合规的状态变更】
     modules:{
         user
     },
