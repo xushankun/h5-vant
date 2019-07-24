@@ -23,24 +23,14 @@ router.beforeEach((to, from, next) => {
         return
     }
     if (to.meta.noLogin) {
-        // 不需要登录清除token
-        config.headers.token = ''
+        // 不需要登录正常跳转
         next();
+    } else if(!store.state.user.isLogin){
+        // 登录而未登录跳转login
+        next({path: '/login'});
     } else {
-        //需要登录而未登录跳转login,   需要登录而已登录设置token
-        if (!store.state.user.isLogin) {
-            next({path: '/login'});
-        }  else {
-            let loginData = store.state.user.loginData
-            if(loginData){
-                config.headers.token = loginData.token;
-            }else {
-                config.headers.token = ''
-            }
-            next()
-        }
+        next();
     }
-    next();
 })
 // --------------------------路由拦截 end------------------------
 
