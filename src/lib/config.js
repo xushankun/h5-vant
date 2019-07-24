@@ -5,7 +5,7 @@
 /* eslint-disable */
 import axios from 'axios'
 import Qs from 'qs'
-import store from '../store/store'
+import store from '../store'
 import { Notify } from 'vant';
 const _baseURL = process.env.VUE_APP_BASEURL + '/api/v1'
 import router from '../router'

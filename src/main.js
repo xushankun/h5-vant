@@ -6,9 +6,8 @@ import Vant from 'vant';
 // import 'vant/lib/index.css';
 import router from './router'
 import './assets/iconfont/iconfont.css'
-import store from './store/store'
+import store from './store'
 import API from './lib/API'
-import { config } from './lib/config'
 Vue.use(Vant);
 Vue.prototype.api = API;
 
