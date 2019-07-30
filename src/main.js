@@ -11,6 +11,9 @@ import API from './lib/API'
 Vue.use(Vant);
 Vue.prototype.api = API;
 
+
+import VConsole from 'vconsole'
+let vConsole = new VConsole()
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {
     // 路由同步页面title

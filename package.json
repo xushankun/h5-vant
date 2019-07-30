@@ -27,6 +27,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "postcss-pxtorem": "^4.0.1",
+    "vconsole": "^3.3.2",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
