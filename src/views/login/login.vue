@@ -10,11 +10,13 @@
                         :loading="isDisabled"
                         loading-text="登录中..."
                         class="lr-btn login-btn" @click="login">登录</van-button>
+            <a :href="url" style="display:flex;margin-top: 50px">去授权</a>
         </div>
     </div>
 </template>
 
 <script>
+    import _url from '../../lib/wx'
     import { mapActions } from "vuex";
     export default {
         name: "login",
@@ -22,11 +24,14 @@
             return {
                 isEye: false,      // 是否显示密码
                 isDisabled:false,    // 按钮是否可点击状态
-                name:'shankun'
+                name:'shankun',
+
+                // 微信
+                url:''
             }
         },
         mounted(){
-
+            this.url = _url
         },
         methods: {
             ...mapActions(["signIn"]),
