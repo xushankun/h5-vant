@@ -3,7 +3,8 @@ import { config } from '../../lib/config'
 
 const state = {
     isLogin: false,
-    loginData: {}
+    loginData: {},
+    code:''
 };
 const mutations = {
     [types.SET_LOGIN_STATUS](state, res) {
@@ -11,12 +12,16 @@ const mutations = {
     },
     [types.SET_LOGIN_INFO](state, res) {
         state.loginData = res
-    }
+    },
+    [types.SET_WX_CODE](state, res) {
+        state.code = res
+    },
 };
 
 const getters = {
     isLogin: state => state.isLogin,
-    loginData: state => state.loginData
+    loginData: state => state.loginData,
+    code: state => state.code
 };
 const actions = {
     signIn({commit},res){
@@ -34,7 +39,13 @@ const actions = {
             config.headers.token = "";
             resolve()
         })
-    }
+    },
+    setCode({commit},res){
+        return new Promise((resolve) => {
+            commit(types.SET_WX_CODE, res);
+            resolve(res)
+        })
+    },
 };
 
 export default {

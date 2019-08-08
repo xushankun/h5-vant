@@ -8,23 +8,19 @@ import router from './router'
 import './assets/iconfont/iconfont.css'
 import store from './store'
 import API from './lib/API'
-import Qs from 'qs'
 Vue.use(Vant);
 Vue.prototype.api = API;
 
+
 import VConsole from 'vconsole'
 let vConsole = new VConsole()
+// 微信网页相关
+import { getWxCode } from "./lib/wx";
+
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {
-    // 重定向获取到微信code
-    console.log('-----------------------------------------OK')
-    console.log(window.location.search)
-    let _search = window.location.search.replace('?', '')
-    _search = Qs.parse(_search);
-    console.log(_search)
-    if(_search) {
-        console.log(_search.code)
-    }
+    // 每次加载路由时执行
+    getWxCode()
     // 路由同步页面title
     if(to.meta.title) {
         document.title = to.meta.title
