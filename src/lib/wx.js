@@ -11,7 +11,7 @@ let _url = `https://open.weixin.qq.com/connect/oauth2/authorize?${Qs.stringify(_
 let getWxCode = ()=>{
     if(!store.state.user.code){
         // 如果不存在code 则去重定向微信url
-        window.location.href = _url;
+        // window.location.href = _url;  // 公众号按钮直接点这个链接
         //此code只能从window.location.href里获取
         let _search = window.location.href.split("?")[1]
         if(_search) {
