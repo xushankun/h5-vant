@@ -19,7 +19,7 @@ Vue.prototype.api = API;
 
 
 import VConsole from 'vconsole'
-new VConsole()
+// new VConsole()
 
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {

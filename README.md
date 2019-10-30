@@ -4,8 +4,8 @@
 基于vue-cli3.0、vant的H5前端开发
 
 #### 软件架构
-软件架构说明
-
+关于图片裁剪【vue-advanced-cropper】
+https://norserium.github.io/vue-advanced-cropper/tutorials/recipes.html#getting-result
 
 #### 安装依赖
 ```
