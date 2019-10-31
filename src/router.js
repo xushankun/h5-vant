@@ -27,6 +27,12 @@ export default new Router({
             name: 'mine',
             meta:{title:'我的'},
             component: () => import(/* webpackChunkName: "mine" */ './views/mine/mine.vue')
+        },
+        {
+            path: '/cropper',
+            name: 'cropper',
+            meta:{title:'上传图片并裁剪'},
+            component: () => import(/* webpackChunkName: "mine" */ './components/cropper.vue')
         }
     ]
 })

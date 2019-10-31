@@ -11,40 +11,20 @@
             <div>用户名：{{loginData.loginname}}</div>
             <div>创建时间：{{loginData.create_at}}</div>
         </div>
-<!--        图片裁剪-->
-        <cropper classname="cropper"
-                 ref="cropper"
-                 :src="img"
-                 :stencil-props="{aspectRatio: 10/10}"
-                @change="change"
-        ></cropper>
-        <img class="croppered-img" :src="imageData" alt="">
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/cropper')">上传图片并裁剪</van-button>
+        </div>
     </div>
-
 </template>
 
 <script>
-    import { Cropper } from 'vue-advanced-cropper'
     import { mapGetters, mapActions } from "vuex";
     export default {
         name: "mine",
         data(){
             return {
-                userData:{},
-                imageData:null,
-                img: 'https://images.unsplash.com/photo-1557097688-37778354ae11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600'
+                userData:{}
             }
-        },
-        components: {
-            Cropper
-        },
-        mounted(){
-            this.$refs.cropper.setCoordinates((coordinates, imageSize) => ({
-                width: imageSize.width,
-                height: imageSize.width,
-                left:0,
-                top:0
-            }))
         },
         methods:{
             ...mapActions(["signOut"]),
@@ -53,10 +33,6 @@
                     this.$toast('已退出')
                     this.$router.push("/login");
                 })
-            },
-            change({coordinates, canvas}) {
-                // console.log(canvas)
-                this.imageData = canvas.toDataURL()
             }
         },
         computed: {

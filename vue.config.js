@@ -34,7 +34,7 @@ module.exports = {
     // 配置 webpack-dev-server 行为。
     devServer: {
         host: '0.0.0.0',    // 本机ip
-        port:'8089',
+        port:'8086',
         https: false,
         hotOnly: false,
         proxy: {                            // 跨域访问地址变为：http://IP地址：8089/api/  +  具体业务
