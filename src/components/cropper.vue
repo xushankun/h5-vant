@@ -2,7 +2,6 @@
     <div class="cropper-wrap">
         <van-uploader class="lr-upload-btn" v-model="fileList" :after-read="onRead">
             <div class="lr-upload">
-                <i class="iconfont icon-xiangji"></i>
                 <span>选择图片</span>
             </div>
         </van-uploader>
@@ -90,7 +89,11 @@
 </script>
 <style lang="less">
     .cropper-wrap {
-
+        .van-uploader__preview {
+            .van-icon.van-icon-delete.van-uploader__preview-delete {
+                display: none;
+            }
+        }
     }
 </style>
 <style lang="less" scoped>
