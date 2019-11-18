@@ -14,6 +14,9 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/cropper')">上传图片并裁剪</van-button>
         </div>
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/pdf')">PDF-demo</van-button>
+        </div>
     </div>
 </template>
 

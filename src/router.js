@@ -32,7 +32,13 @@ export default new Router({
             path: '/cropper',
             name: 'cropper',
             meta:{title:'上传图片并裁剪'},
-            component: () => import(/* webpackChunkName: "mine" */ './components/cropper.vue')
+            component: () => import(/* webpackChunkName: "cropper" */ './components/cropper.vue')
+        },
+        {
+            path: '/pdf',
+            name: 'pdf',
+            meta:{title:'vue-pdf'},
+            component: () => import(/* webpackChunkName: "pdf" */ './components/pdf.vue')
         }
     ]
 })

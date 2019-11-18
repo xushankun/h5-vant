@@ -11,10 +11,12 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "axios": "^0.19.0",
+    "babel-runtime": "^6.26.0",
     "core-js": "^2.6.5",
     "vant": "^2.0.5",
     "vue": "^2.6.10",
     "vue-advanced-cropper": "^0.13.1",
+    "vue-pdf": "^4.0.7",
     "vue-router": "^3.0.7",
     "vuex": "^3.1.1"
   },
