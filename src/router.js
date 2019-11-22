@@ -39,6 +39,18 @@ export default new Router({
             name: 'pdf',
             meta:{title:'vue-pdf'},
             component: () => import(/* webpackChunkName: "pdf" */ './components/pdf.vue')
+        },
+        {
+            path: '/sign',
+            name: 'sign',
+            meta:{title:'签字板'},
+            component: () => import(/* webpackChunkName: "sign" */ './components/sign/sign.vue')
+        },
+        {
+            path: '/canvas',
+            name: 'canvas',
+            meta:{title:'canvas'},
+            component: () => import(/* webpackChunkName: "canvas" */ './components/sign/Canvas.vue')
         }
     ]
 })
