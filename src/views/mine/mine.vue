@@ -23,6 +23,9 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">canvas画板</van-button>
         </div>
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/doodle')">css-doodle</van-button>
+        </div>
     </div>
 </template>
 

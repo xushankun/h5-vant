@@ -51,6 +51,12 @@ export default new Router({
             name: 'canvas',
             meta:{title:'canvas'},
             component: () => import(/* webpackChunkName: "canvas" */ './components/sign/Canvas.vue')
+        },
+        {
+            path: '/doodle',
+            name: 'doodle',
+            meta:{title:'css-doodle'},
+            component: () => import(/* webpackChunkName: "cssDoodle" */ './components/css-doodle/cssDoodle.vue')
         }
     ]
 })
