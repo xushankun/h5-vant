@@ -63,9 +63,9 @@ export default {
       if (this.canvasBox) {
         this.canvasBox.removeChild(document.querySelector('canvas'));
         this.canvasBox.appendChild(document.createElement('canvas'));
-        setTimeout(() => {
+        this.$nextTick(()=>{
           this.initCanvas();
-        }, 200);
+        })
       }
       return {
         transform: `rotate(${this.degree}deg) translate(${length}px,${length}px)`,
@@ -109,43 +109,53 @@ export default {
 
 </script>
 
-<style>
+<style lang="less" scoped>
 .container {
   width: 100%;
   height: 100%;
-}
-#canvasBox {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.greet {
-  padding: 20px;
-  font-size: 20px;
-  user-select: none;
-}
-input {
-  font-size: 20px;
-}
-.greet select {
-  font-size: 18px;
-}
-canvas {
-  flex: 1;
-  cursor: crosshair;
-  border:2px dashed lightgray;
-}
-.image-box {
-  width: 100%;
-  height: 100%;
-}
-.image-box header{
-  font-size: 18px;
-}
-.image-box img {
-  max-width: 80%;
-  max-height: 80%;
-  margin-top: 50px;
-  border: 1px solid gray;
+  #canvasBox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .greet {
+      padding: 20px;
+      font-size: 20px;
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      & select {
+        font-size: 18px;
+      }
+    }
+    canvas {
+      flex: 1;
+      cursor: crosshair;
+      border:2px dashed lightgray;
+    }
+  }
+  .image-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    header{
+      width: 100%;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      input {
+        font-size: 20px;
+      }
+    }
+    img {
+      max-width: 80%;
+      max-height: 80%;
+      margin-top: 50px;
+      border: 1px solid gray;
+    }
+  }
 }
 </style>
