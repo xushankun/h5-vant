@@ -16,7 +16,7 @@
 import Draw from '../../lib/draw';
 
 export default {
-  name: 'canvas',
+  name: 'canvasDemo',
   data() {
     return {
       msg: 'Just use canvas to draw',

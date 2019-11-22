@@ -22,7 +22,7 @@
 import Draw from '../../lib/draw';
 
 export default {
-  name: 'canvas',
+  name: 'canvasSign',
   data() {
     return {
       msg: '请在下方空白处签名',
