@@ -48,6 +48,15 @@
                         this.finished = true;
                     }
                 }, 500);
+            },
+            activated() {
+                console.log('list activated')
+            },
+            deactivated() {
+                console.log('list deactivated')
+            },
+            destroyed() {
+                console.log('list destroyed')
             }
         }
     }
