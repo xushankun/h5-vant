@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+<!--    前进加载后退缓存-->
+    <navigation>
+      <router-view/>
+    </navigation>
   </div>
 </template>
 

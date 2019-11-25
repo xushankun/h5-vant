@@ -8,6 +8,9 @@ import router from './router'
 import './assets/iconfont/iconfont.css'
 import store from './store'
 import API from './lib/API'
+// 前进加载后退缓存
+import Navigation from 'vue-navigation'
+Vue.use(Navigation, {router, store})
 
 // 国际化
 import { Locale } from 'vant';
@@ -18,8 +21,9 @@ Vue.use(Vant);
 Vue.prototype.api = API;
 
 
+
 import VConsole from 'vconsole'
-// new VConsole()
+new VConsole()
 
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {

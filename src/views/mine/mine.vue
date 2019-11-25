@@ -20,12 +20,18 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">签字板</van-button>
         </div>
+<!--        <div class="signOut-block">-->
+<!--            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">canvas画板</van-button>-->
+<!--        </div>-->
         <div class="signOut-block">
-            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">canvas画板</van-button>
-        </div>
-        <div class="signOut-block">
+            <span>css图形绘画插件</span>
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/doodle')">css-doodle</van-button>
         </div>
+        <div class="signOut-block">
+            <span>前进刷新，后退缓存</span>
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/list')">vue-navigation</van-button>
+        </div>
+
     </div>
 </template>
 
@@ -58,9 +64,9 @@
     padding: 30px;
     box-sizing: border-box;
     .signOut-block {
+        margin-top: 10px;
         .lr-btn {
             width: 100%;
-            margin-top: 30px;
         }
     }
     .cropper {

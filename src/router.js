@@ -57,6 +57,19 @@ export default new Router({
             name: 'doodle',
             meta:{title:'css-doodle'},
             component: () => import(/* webpackChunkName: "cssDoodle" */ './components/css-doodle/cssDoodle.vue')
-        }
+        },
+        {
+            path: '/list',
+            name: 'list',
+            meta:{title:'list'},
+            component: () => import(/* webpackChunkName: "list" */ './views/list/list.vue')
+        },
+        {
+            path: '/details',
+            name: 'details',
+            meta:{title:'details'},
+            component: () => import(/* webpackChunkName: "details" */ './views/list/details.vue')
+        },
+
     ]
 })
