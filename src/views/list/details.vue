@@ -1,5 +1,18 @@
 <template>
-    <div class="details-wrap">详情ID:{{$route.query.id}}</div>
+    <div class="details-wrap">
+        <h1>详情ID:{{$route.query.id}}</h1>
+        <div class="item-block"><img src="https://picsum.photos/id/10/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/11/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/12/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/13/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/14/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/15/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/16/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/17/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/18/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/19/480/360"></div>
+        <div class="item-block"><img src="https://picsum.photos/id/20/480/360"></div>
+    </div>
 </template>
 
 <script>
@@ -13,5 +26,14 @@
 <style lang="less" scoped>
 .details-wrap {
     padding: 15px;
+    width: 100%;
+    .item-block {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
 }
 </style>
