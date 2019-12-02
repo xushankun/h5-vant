@@ -30,15 +30,16 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   response => {
+    if(response.data.code === 401){
+      Notify(response.data.msg);
+      store.dispatch('signOut').then(()=>{
+          router.push('/login')
+      });
+    }
     return response.data
   },
   error => {
-    if(error.code === 401){
-      Notify(error.msg);
-      store.dispatch('signOut').then(()=>{
-        router.push('/login')
-      });
-    }
+    console.log(error)
     return Promise.reject(error)
   }
 )
