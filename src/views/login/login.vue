@@ -11,7 +11,7 @@
                         loading-text="登录中..."
                         class="lr-btn login-btn" @click="login">登录</van-button>
         </div>
-        <div class="mt10">{{code}}</div>
+        <div class="mt10">{{token}}</div>
     </div>
 </template>
 
@@ -51,7 +51,7 @@
             }
         },
         computed: {
-            ...mapGetters(["code"])
+            ...mapGetters(["token"])
         }
     }
 </script>

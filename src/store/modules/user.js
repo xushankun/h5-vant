@@ -1,10 +1,9 @@
 import * as types from '../types'
-import { config } from '../../lib/config'
 
 const state = {
     isLogin: false,
     loginData: {},
-    code:''
+    token:''
 };
 const mutations = {
     [types.SET_LOGIN_STATUS](state, res) {
@@ -13,22 +12,22 @@ const mutations = {
     [types.SET_LOGIN_INFO](state, res) {
         state.loginData = res
     },
-    [types.SET_WX_CODE](state, res) {
-        state.code = res
+    [types.SET_TOKEN](state, res) {
+        state.token = res
     },
 };
 
 const getters = {
     isLogin: state => state.isLogin,
     loginData: state => state.loginData,
-    code: state => state.code
+    token: state => state.token
 };
 const actions = {
     signIn({commit},res){
         return new Promise((resolve) => {
             commit(types.SET_LOGIN_STATUS, true);
             commit(types.SET_LOGIN_INFO, res);
-            config.headers.token = res.token;
+            commit(types.SET_TOKEN, res.loginname);
             resolve(res)
         })
     },
@@ -36,16 +35,10 @@ const actions = {
         return new Promise((resolve) => {
             commit(types.SET_LOGIN_STATUS, false);
             commit(types.SET_LOGIN_INFO, {});
-            config.headers.token = "";
+            commit(types.SET_TOKEN, '');
             resolve()
         })
-    },
-    setCode({commit},res){
-        return new Promise((resolve) => {
-            commit(types.SET_WX_CODE, res);
-            resolve(res)
-        })
-    },
+    }
 };
 
 export default {

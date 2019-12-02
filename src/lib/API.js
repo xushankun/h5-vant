@@ -1,15 +1,20 @@
 /**
  * Created by shankun on 2019/5/29.
  */
-import { request } from './config'
-// import store from "../store/store";
+// import { request } from './config'
+import request  from './request'
 
 export default {
     // 登录
-    login: obj => request('/accesstoken', "post", obj),
+    login: data=> request({
+        url: '/accesstoken',
+        method: 'post',
+        data
+    }),
     // 获取用户详情
-    getUserData: obj => request('/user/'+ obj.userName, "get", obj),
-    // ----------------------------------问答-----------------------------------
-    // 问答列表
-    qaList:obj => request('/lr-api/app/question/pageList', "get", obj)
+    getUserData: params=> request({
+        url: '/user/'+ params.userName,
+        method: 'get',
+        params
+    })
 }
