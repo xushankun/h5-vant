@@ -27,10 +27,11 @@
             <span>css图形绘画插件</span>
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/doodle')">css-doodle</van-button>
         </div>
-        <div class="signOut-block">
-            <span>前进刷新，后退缓存</span>
-            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/list')">vue-navigation</van-button>
-        </div>
+<!--        记得在App.vue里使用navigation组件-->
+<!--        <div class="signOut-block">-->
+<!--            <span>前进刷新，后退缓存</span>-->
+<!--            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/list')">vue-navigation</van-button>-->
+<!--        </div>-->
 
     </div>
 </template>

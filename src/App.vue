@@ -1,11 +1,13 @@
 <template>
   <div id="app">
 <!--    前进加载后退缓存-->
-    <transition name="fade">
-      <navigation>
-        <router-view></router-view>
-      </navigation>
-    </transition>
+<!--    <transition name="fade">-->
+<!--      <navigation>-->
+<!--        <router-view></router-view>-->
+<!--      </navigation>-->
+<!--    </transition>-->
+
+      <router-view></router-view>
   </div>
 </template>
 
