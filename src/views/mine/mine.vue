@@ -20,7 +20,11 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">签字板</van-button>
         </div>
-<!--        <div class="signOut-block">-->
+        <div class="signOut-block">
+            <span> 弹出数字键盘，只能输入数字</span>
+            <van-field type="number" pattern="[0-9]*" @input="onInput($event.target.value)" v-model="number" />
+        </div>
+        <!--        <div class="signOut-block">-->
 <!--            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/sign')">canvas画板</van-button>-->
 <!--        </div>-->
         <div class="signOut-block">
@@ -42,6 +46,7 @@
         name: "mine",
         data(){
             return {
+                number:null,
                 userData:{}
             }
         },
