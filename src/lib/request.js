@@ -6,7 +6,7 @@ import router from "../router";
 
 const service = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? `http://192.168.16.155:8086/api/api/v1` : process.env.VUE_APP_BASEURL,
-  withCredentials: true, // 跨域请求时发送 cookies
+  withCredentials: false, // 跨域请求时发送 cookies
   paramsSerializer: params => qs.stringify(params, {arrayFormat: 'repeat'}),  // I need array serialization to be repeat, eg: sort=p1,asc&sort=p2,desc
   // timeout: 5000,
   // headers: { 'Content-Type': 'application/json'}, // 默认
