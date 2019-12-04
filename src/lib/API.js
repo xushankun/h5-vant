@@ -5,9 +5,9 @@ import { request } from './config'
 // import request  from './request'
 
 export default {
-    // login: obj => request('/accesstoken', "post", obj),
-    // // 获取用户详情
-    // getUserData: obj => request('/user/'+ obj.userName, "get", obj),
+    login: obj => request('/accesstoken', "post", obj),
+    // 获取用户详情
+    getUserData: obj => request('/user/'+ obj.userName, "get", obj),
 
 
     // // 登录
