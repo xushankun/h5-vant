@@ -36,6 +36,10 @@
 <!--            <span>前进刷新，后退缓存</span>-->
 <!--            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/list')">vue-navigation</van-button>-->
 <!--        </div>-->
+        <a href="javascript:void(0)" class="drop-down" @blur="isShow = false">
+            <span @click.self="isShow = !isShow">菜单</span>
+            <div v-if="isShow">子菜单</div>
+        </a>
 
     </div>
 </template>
@@ -47,7 +51,8 @@
         data(){
             return {
                 number:null,
-                userData:{}
+                userData:{},
+                isShow:false
             }
         },
         methods:{
@@ -75,24 +80,16 @@
             width: 100%;
         }
     }
-    .cropper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        width: 100%;
-        height: 100vh;
-        background: #ddd;
-        box-sizing: border-box;
-    }
-    .croppered-img {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        z-index: 1000;
+    .drop-down {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        color: #333;
+        & > div {
+            padding: 10px;
+            background: rgba(0,0,0,.6);
+            color: #fff;
+        }
     }
 }
 </style>
