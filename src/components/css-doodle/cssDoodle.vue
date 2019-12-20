@@ -17,13 +17,30 @@
             transform-origin: 50% 50%;
             background: #60569e;
         </css-doodle>
+        <van-circle
+                v-model="currentRate"
+                style="font-size: 14px"
+                :rate="80"
+                :speed="100"
+                :text="text"
+        />
     </div>
 </template>
 
 <script>
     import 'css-doodle';
     export default {
-        name: "cssDoodleDemo"
+        name: "cssDoodleDemo",
+        data() {
+            return {
+                currentRate: 0
+            };
+        },
+        computed: {
+            text() {
+                return this.currentRate.toFixed(0) + '%'
+            }
+        }
     }
 </script>
 

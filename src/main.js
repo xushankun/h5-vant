@@ -21,7 +21,7 @@ Vue.use(Vant);
 Vue.prototype.api = API;
 
 
-
+console.log(process.env.NODE_ENV)
 // import VConsole from 'vconsole'
 // new VConsole()
 

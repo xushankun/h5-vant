@@ -36,8 +36,8 @@
 <!--            <span>前进刷新，后退缓存</span>-->
 <!--            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/list')">vue-navigation</van-button>-->
 <!--        </div>-->
-        <a href="javascript:void(0)" class="drop-down" @blur="isShow = false">
-            <span @click.self="isShow = !isShow">菜单</span>
+        <a href="javascript:void(0)" class="px-drop-down" @blur="isShow = false">
+            <span @click.self="isShow = !isShow">菜单【.px- 开头的class 不转换rem】</span>
             <div v-if="isShow">子菜单</div>
         </a>
 
@@ -80,7 +80,8 @@
             width: 100%;
         }
     }
-    .drop-down {
+    .px-drop-down {
+        font-size: 14px;
         margin-top: 20px;
         display: flex;
         flex-direction: column;

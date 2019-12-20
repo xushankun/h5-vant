@@ -21,7 +21,9 @@ module.exports = {
                 propList: ['*'],
                 // 该项仅在使用 Circle 组件时需要
                 // 原因参见 https://github.com/youzan/vant/issues/1948
-                selectorBlackList: ['van-circle__layer']
+                selectorBlackList: [
+                    '.px-'      // 过滤掉.px-开头的class，不进行rem转换
+                ]
               })
             ]
           }
