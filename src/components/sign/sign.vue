@@ -20,9 +20,10 @@
 
 <script>
 import Draw from '../../lib/draw';
-
+import remMixin from "@/lib/remMixin";
 export default {
   name: 'canvasSign',
+  mixins: [remMixin],
   data() {
     return {
       msg: '请在下方空白处签名',
