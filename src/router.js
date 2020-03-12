@@ -6,9 +6,9 @@ Vue.use(Router)
 // title => 页面title
 // noLogin:true 当前路由不需要登录
 export default new Router({
-    mode: 'history',
-    props: true,
-    // mode: 'hash',
+    // mode: 'history',
+    // props: true,
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes: [
         {path: '/', redirect: '/mine'},

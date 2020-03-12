@@ -9,8 +9,8 @@ import './assets/iconfont/iconfont.css'
 import store from './store'
 import API from './lib/API'
 // 前进加载后退缓存
-import Navigation from 'vue-navigation'
-Vue.use(Navigation, {router, store})
+// import Navigation from 'vue-navigation'
+// Vue.use(Navigation, {router, store})
 
 // 国际化
 import { Locale } from 'vant';

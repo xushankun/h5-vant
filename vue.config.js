@@ -39,7 +39,7 @@ module.exports = {
         port:'8086',
         https: false,
         hotOnly: false,
-        historyApiFallback: true,
+        // historyApiFallback: true,
         proxy: {                            // 跨域访问地址变为：http://IP地址：8089/api/  +  具体业务
             "/api": {
                 target: process.env.VUE_APP_BASEURL,    // 接口baseUrl   【参考链接：https://blog.csdn.net/u012302552/article/details/81742907】
