@@ -7,6 +7,8 @@
 关于图片裁剪【vue-advanced-cropper】
 https://norserium.github.io/vue-advanced-cropper/tutorials/recipes.html#getting-result
 
+各种H5开发小技巧集合
+
 #### 安装依赖
 ```
 cnpm install
