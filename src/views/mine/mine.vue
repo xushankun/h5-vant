@@ -41,7 +41,10 @@
             <div v-if="isShow">子菜单</div>
         </a>
         <div class="signOut-block">
-            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/camera')">拍照</van-button>
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/camera')">摄像拍照</van-button>
+        </div>
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/camera2')">直接调用相机拍照</van-button>
         </div>
 
     </div>
