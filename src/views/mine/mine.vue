@@ -40,6 +40,9 @@
             <span @click.self="isShow = !isShow">菜单【.px- 开头的class 不转换rem】</span>
             <div v-if="isShow">子菜单</div>
         </a>
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/camera')">拍照</van-button>
+        </div>
 
     </div>
 </template>

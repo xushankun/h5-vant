@@ -72,6 +72,12 @@ export default new Router({
             meta:{title:'details'},
             component: () => import(/* webpackChunkName: "details" */ './views/list/details.vue')
         },
+        {
+            path: '/camera',
+            name: 'camera',
+            meta:{title:'camera'},
+            component: () => import(/* webpackChunkName: "camera" */ './components/camera/index.vue')
+        },
 
     ]
 })
