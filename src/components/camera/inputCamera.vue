@@ -1,10 +1,15 @@
 <template>
-    <!--
-         accept="image/*" 规定上传文件的类型，只支持图片
-         capture="camera" 打开系统照相机进行拍照，触发
-         onchange事件
-         至于input是否好看，自己百度看如何美化...
-       -->
+<!--    文档：http://h5apk.cn/input-capture.php-->
+<!--    x5内核和iOS系统相对来说比较遵守HTML5官方规范，安卓的webview基本忽略了capture。-->
+<!--    理想情况下应该按照如下开发webview：-->
+<!--    1. 当accept="image/*"时，capture="user"调用前置照相机，capture="其他值"，调用后置照相机-->
+<!--    2. 当accept="video/*"时，capture="user"调用前置录像机，capture="其他值"，调用后置录像机-->
+<!--    3. 当accept="image/*,video/*"，capture="user"调用前置摄像头，capture="其他值"，调用后置摄像头，默认照相，可切换录像-->
+<!--    4. 当accept="audio/*"时，capture="放空或者任意值"，调用录音机-->
+<!--    5. 当input没有capture时，根据accppt类型给出文件夹选项以及摄像头或者录音机选项-->
+<!--    6. input含有multiple时访问文件夹可勾选多文件，调用系统摄像头或者录音机都只是单文件-->
+<!--    7. 无multiple时都只能单文件-->
+<!--    但是由于谷歌安卓系统的webview只能判断有无capture，无法获取capture的值，因此h5apk.cn只能在判断有capture时直接调用照相机，以做到最大程度的兼容。-->
     <div class="input-camera">
         <div class="btn-block">
             <div class="btn-box">
@@ -34,6 +39,12 @@
             <div class="btn-box">
                 <input ref="photorefEnd2" type="file" accept="image/*,video/*" @change="Photograph('photorefEnd2')" capture="camera"/>
                 <van-button type="primary">后置【拍照/摄像】</van-button>
+            </div>
+        </div>
+        <div class="btn-block">
+            <div class="btn-box">
+                <input ref="photoFront3" type="file" accept="audio/*" @change="Photograph('photoFront3')" capture=""/>
+                <van-button type="primary">调用录音机</van-button>
             </div>
         </div>
         <div class="preview">
