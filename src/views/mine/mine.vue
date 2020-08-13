@@ -52,6 +52,10 @@
             <van-button type="primary" class="lr-btn test-btn">css埋点</van-button>
         </div>
 
+<!--        <div class="signOut-block">-->
+<!--            <van-button type="primary" round size="normal" class="lr-btn" @click="backMp">返回小程序</van-button>-->
+<!--        </div>-->
+
     </div>
 </template>
 
@@ -72,6 +76,17 @@
                 this.signOut().then(()=>{
                     this.$toast('已退出')
                     this.$router.push("/login");
+                })
+            },
+            // javascript
+            // wx.miniProgram.navigateTo({url: '/path/to/page'})
+            // wx.miniProgram.postMessage({ data: 'foo' })
+            // wx.miniProgram.postMessage({ data: {foo: 'bar'} })
+            // wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
+            backMp(){
+                // 返回小程序
+                wx.miniProgram.navigateBack({
+                    delta: 1
                 })
             }
         },
