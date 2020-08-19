@@ -84,6 +84,12 @@ export default new Router({
             meta:{title:'camera2'},
             component: () => import(/* webpackChunkName: "camera2" */ './components/camera/inputCamera.vue')
         },
+        {
+            path: '/anime',
+            name: 'anime',
+            meta:{title:'anime'},
+            component: () => import(/* webpackChunkName: "anime" */ './components/anime/index.vue')
+        },
 
     ]
 })
