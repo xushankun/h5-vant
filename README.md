@@ -1,4 +1,4 @@
-# h5-vant【test】
+# h5-vant
 
 #### 项目介绍
 基于vue-cli3.0、vant的H5前端开发
