@@ -21,9 +21,7 @@ export default {
 	},
 	mounted() {
 		let a = 1
-		if (a) {
-			return a + 1
-		}
+		if (a) {return a + 1}
 	},
 	created() {
 		// bind event
