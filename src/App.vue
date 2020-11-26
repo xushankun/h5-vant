@@ -7,7 +7,7 @@
 		<!--      </navigation>-->
 		<!--    </transition>-->
 
-		<router-view :key="key"></router-view>
+		<router-view :key="key + '123'"></router-view>
 	</div>
 </template>
 
