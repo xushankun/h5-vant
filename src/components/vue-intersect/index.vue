@@ -5,7 +5,7 @@
                  :class="{'active':index === 0}"
                  :key="index">
                 <span>序号：{{item.id}}</span>
-                <span>时间：{{item.v.time}}</span>
+<!--                <span>时间：{{item.v.time}}</span>-->
             </div>
         </div>
         <div class="iw-list">
@@ -18,11 +18,16 @@
 </template>
 
 <script>
+	// http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html
 	export default {
 		name: 'intersect',
 			data () {
 				return {
                   showList: [],
+                  // setOption:{
+                  //   root: document.querySelector('.iw-list'),
+                  //   rootMargin: "100px 0px"
+                  // }
 				}
 			},
        created() {
@@ -48,7 +53,10 @@
                      // 按照指定元素排序
                     _that.showList = _that.showList.sort(this.compare('id'))
                    })
-                })
+                }, {
+                    root: document.querySelector('.iw-list'),
+                    // rootMargin: "40px 0px"
+				})
                 setTimeout(() => {
                    const items = document.querySelectorAll('.item-block') || []
                    items.forEach((item) => obserRef.observe(item))
@@ -95,11 +103,14 @@
             }
         }
         .iw-list {
+            overflow-y: scroll;
+            height: 100vh;
+            border: 1px solid red;
             .item-block {
                 height: 80px;
                 display: flex;
                 align-items: center;
-                border-bottom: 1px solid red;
+                border-bottom: 1px solid #eee;
                 padding: 10px 15px;
             }
         }
