@@ -39,7 +39,6 @@
              this.$nextTick(() => {
                 const obserRef = new IntersectionObserver((entries) => {
                    entries.forEach(v => {
-                   	// console.log(v)
 					const { id } = v.target.dataset
 
                      let isIncludes = _that.showList.filter(_item=> _item.id === id).length
