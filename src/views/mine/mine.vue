@@ -51,6 +51,9 @@
             2.JS 埋点统计用户可以通过浏览器禁用，CSS的话没办法禁用
             <van-button type="primary" class="lr-btn test-btn">css埋点</van-button>
         </div>
+        <div class="signOut-block">
+            <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/vueIntersect')">元素与可视区域的交叉</van-button>
+        </div>
 
 <!--        <div class="signOut-block">-->
 <!--            <van-button type="primary" round size="normal" class="lr-btn" @click="backMp">返回小程序</van-button>-->

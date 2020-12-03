@@ -90,6 +90,12 @@ export default new Router({
             meta:{title:'anime'},
             component: () => import(/* webpackChunkName: "anime" */ './components/anime/index.vue')
         },
+        {
+            path: '/vueIntersect',
+            name: 'vueIntersect',
+            meta:{title:'vueIntersect'},
+            component: () => import(/* webpackChunkName: "vueIntersect" */ './components/vue-intersect/index.vue')
+        },
 
     ]
 })

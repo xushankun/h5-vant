@@ -8,6 +8,7 @@ import router from './router'
 import './assets/iconfont/iconfont.css'
 import store from './store'
 import API from './lib/API'
+import 'intersection-observer'
 // 前进加载后退缓存
 // import Navigation from 'vue-navigation'
 // Vue.use(Navigation, {router, store})
@@ -20,9 +21,9 @@ Locale.use('en-US', enUS)
 Vue.use(Vant)
 Vue.prototype.api = API
 
-console.log(process.env.NODE_ENV)
-import VConsole from 'vconsole'
-new VConsole()
+// console.log(process.env.NODE_ENV)
+// import VConsole from 'vconsole'
+// new VConsole()
 
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {

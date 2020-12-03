@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "animejs": "^3.2.1",
     "axios": "^0.19.0",
     "babel-runtime": "^6.26.0",
     "core-js": "^2.6.5",
     "css-doodle": "^0.7.4",
+    "intersection-observer": "^0.11.0",
     "vant": "^2.2.16",
     "vue": "^2.6.10",
     "vue-advanced-cropper": "^0.13.1",
@@ -48,31 +50,8 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off",
-      "no-debugger": "off",
-      "no-dupe-keys": "error",
-      "no-duplicate-case": "error",
-      "no-empty": ["error", {"allowEmptyCatch": true}],
-      "no-ex-assign": "error",
-      "no-extra-boolean-cast": "error",
-      "no-extra-semi": "error",
-      "curly": "error"
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
+      "no-console": "off"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**": [
-      "prettier --config .prettierrc --write",
-      "eslint --fix",
-      "git add"
-    ]
   },
   "postcss": {
     "plugins": {
