@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="iw-list">
-            <div v-for="(item,index) in 50" :key="index">
+            <div v-for="(item,index) in 100" :key="index">
                 <div data-type="task" :data-id="item" class="item-block">{{item}}-测试元素
                 </div>
             </div>
@@ -39,6 +39,7 @@
              this.$nextTick(() => {
                 const obserRef = new IntersectionObserver((entries) => {
                    entries.forEach(v => {
+                   	// console.log(v)
 					const { id } = v.target.dataset
 
                      let isIncludes = _that.showList.filter(_item=> _item.id === id).length
