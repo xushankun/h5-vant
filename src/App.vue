@@ -1,13 +1,11 @@
 <template>
 	<div id="app">
 		<!--    前进加载后退缓存-->
-		<!--    <transition name="fade">-->
-		<!--      <navigation>-->
-		<!--        <router-view></router-view>-->
-		<!--      </navigation>-->
-		<!--    </transition>-->
+		<vue-page-stack>
+			<router-view ></router-view>
+		</vue-page-stack>
 
-		<router-view :key="key"></router-view>
+<!--		<router-view :key="key"></router-view>-->
 	</div>
 </template>
 
@@ -15,9 +13,9 @@
 export default {
 	name: 'app',
 	computed: {
-		key() {
-			return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
-		},
+		// key() {
+		// 	return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
+		// },
 	},
 	mounted() {
 		let a = 1

@@ -10,8 +10,8 @@ import store from './store'
 import API from './lib/API'
 import 'intersection-observer'
 // 前进加载后退缓存
-// import Navigation from 'vue-navigation'
-// Vue.use(Navigation, {router, store})
+import VuePageStack from 'vue-page-stack';
+Vue.use(VuePageStack, { router });
 
 // 国际化
 import { Locale } from 'vant'
