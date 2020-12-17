@@ -46,6 +46,10 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/camera2')">直接调用相机拍照</van-button>
         </div>
+      <div class="signOut-block">
+        <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/card')">卡片滑动</van-button>
+      </div>
+
         <div class="signOut-block">
             1.当然这种方式使用比较简单的事件埋点。复杂的话还是需要 JS 操作。<br>
             2.JS 埋点统计用户可以通过浏览器禁用，CSS的话没办法禁用

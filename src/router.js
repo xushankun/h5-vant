@@ -96,6 +96,25 @@ export default new Router({
             meta:{title:'vueIntersect'},
             component: () => import(/* webpackChunkName: "vueIntersect" */ './components/vue-intersect/index.vue')
         },
+        // 卡片
+        {
+            path: '/card',
+            name: 'card',
+            meta:{title:'card'},
+            component: () => import(/* webpackChunkName: "card" */ './views/card/index/index')
+        },
+        {
+            path: '/demozhihu',
+            name: 'demozhihu',
+            meta:{title:'demozhihu'},
+            component: () => import(/* webpackChunkName: "demozhihu" */ './views/card/demozhihu/demozhihu')
+        },
+        {
+            path: '/demotantan',
+            name: 'demotantan',
+            meta:{title:'demotantan'},
+            component: () => import(/* webpackChunkName: "demotantan" */ './views/card/demotantan/demotantan')
+        },
 
     ]
 })
