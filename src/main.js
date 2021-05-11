@@ -25,6 +25,9 @@ Vue.prototype.api = API
 // import VConsole from 'vconsole'
 // new VConsole()
 
+// ---------------------------全局组件--------------------------------
+//在这引入全局组件【可通过js调用】
+import './components/tipBlock/index'
 // --------------------------路由拦截start-----------------------
 router.beforeEach((to, from, next) => {
 	// 路由同步页面title
