@@ -71,22 +71,21 @@
 
       <!--js判断是否超出省略号-->
       <div class="signOut-block">
-        <div style="width: 300px;">
+        <div class="te-item">
           <textEllipsis teText="1.js判断是否超出省略号" :textClass="{
-            width: '300px',
             color: 'red'
           }"></textEllipsis>
         </div>
-        <div style="width: 300px;">
+        <div class="te-item">
           <textEllipsis teText="2.超出范围就省略Hover提示全部" :hoverClass="{
           color: '#fff',
           background: 'rgba(0,0,0,.7)'
         }"></textEllipsis>
         </div>
-        <div style="width: 300px;">
+        <div class="te-item">
           <textEllipsis teText="3.不省略不提示"></textEllipsis>
         </div>
-        <div style="width: 300px;">
+        <div class="te-item">
           <textEllipsis teText="4.超出范围就省略Hover提示全部"></textEllipsis>
         </div>
       </div>
@@ -168,5 +167,8 @@
         content: url("https://shankun.top");
         display: none;
     }
+  .te-item {
+    width: 140px;
+  }
 }
 </style>
