@@ -45,7 +45,9 @@ export default {
       let box = this.$refs.teCont
       // 文本内容宽度【内容所占长度】
       let boxW = this.$refs.teWidth
-      let _w = boxW.offsetWidth + 1
+      // 若box  display:inline-block 则宽度设置 + 1
+      // let _w = boxW.offsetWidth + 1
+      let _w = boxW.offsetWidth
       if(_w >= boxWrapW.offsetWidth) {
         _w = boxWrapW.offsetWidth
       }
@@ -64,18 +66,19 @@ export default {
 <style scoped>
 .te-wrap {
   display: inline-block;
-  width: inherit;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .text-cont {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
   position: relative;
 }
 .text-width {
-  display: inline-block;
+  display: block;
   width: 100%;
   height: 0;
   position: absolute;
