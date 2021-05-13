@@ -71,22 +71,22 @@
 
       <!--js判断是否超出省略号-->
       <div class="signOut-block">
-        <div style="width: 300px;" v-if="a">
+        <div style="width: 300px;">
           <textEllipsis teText="1.js判断是否超出省略号" :textClass="{
             width: '300px',
             color: 'red'
           }"></textEllipsis>
         </div>
-        <div style="width: 300px;" v-if="b">
+        <div style="width: 300px;">
           <textEllipsis teText="2.超出范围就省略Hover提示全部" :hoverClass="{
           color: '#fff',
           background: 'rgba(0,0,0,.7)'
         }"></textEllipsis>
         </div>
-        <div style="width: 300px;" v-if="a">
+        <div style="width: 300px;">
           <textEllipsis teText="3.不省略不提示"></textEllipsis>
         </div>
-        <div style="width: 300px;" v-if="b">
+        <div style="width: 300px;">
           <textEllipsis teText="4.超出范围就省略Hover提示全部"></textEllipsis>
         </div>
       </div>
@@ -107,17 +107,11 @@
             return {
                 number:null,
                 userData:{},
-                isShow:false,
-                a:false,
-                b:false
+                isShow:false
             }
         },
       components:{
         textEllipsis
-      },
-      mounted() {
-        this.a = true
-        this.b = true
       },
       methods:{
             ...mapActions(["signOut"]),

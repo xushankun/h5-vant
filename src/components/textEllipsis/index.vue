@@ -11,7 +11,6 @@
 <script>
 export default {
   name: "textEllipsis",
-  // props:['teText','textClass','hoverClass'],
   props:{
     teText:{
       type: String,
@@ -33,6 +32,10 @@ export default {
   },
   mounted() {
     this.handleShow()
+    let _that = this
+    window.onresize = function(){
+      _that.handleShow()
+    }
   },
   methods:{
     handleShow(){
@@ -58,47 +61,42 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-span {
-  outline: 1px solid red;
-}
+<style scoped>
 .te-wrap {
   display: inline-block;
   width: inherit;
   position: relative;
-  .text-cont {
-    display: inline-block;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-    position: relative;
-    .text-width {
-      position: absolute;
-      left: 0;
-      right: 0;
-      display: inline-block;
-      width: 100%;
-      height: 0;
-    }
-  }
-  .text-hover {
-    width: inherit;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    padding: 4px;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,.3);
-    box-sizing: border-box;
-  }
-  &:hover {
-    .text-hover {
-      display: block;
-      transform: translateY(-100%)
-    }
-  }
+}
+.text-cont {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.text-width {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.text-hover {
+  width: inherit;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 4px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+.te-wrap:hover .text-hover {
+  display: block;
+  transform: translateY(-100%)
 }
 </style>
