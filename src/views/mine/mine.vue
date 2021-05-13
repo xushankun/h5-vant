@@ -69,6 +69,28 @@
         <van-button type="primary" class="lr-btn test-btn" @click="openTipBlock">打开tipBlock</van-button>
       </div>
 
+      <!--js判断是否超出省略号-->
+      <div class="signOut-block">
+        <div style="width: 300px;" v-if="a">
+          <textEllipsis teText="1.js判断是否超出省略号" :textClass="{
+            width: '300px',
+            color: 'red'
+          }"></textEllipsis>
+        </div>
+        <div style="width: 300px;" v-if="b">
+          <textEllipsis teText="2.超出范围就省略Hover提示全部" :hoverClass="{
+          color: '#fff',
+          background: 'rgba(0,0,0,.7)'
+        }"></textEllipsis>
+        </div>
+        <div style="width: 300px;" v-if="a">
+          <textEllipsis teText="3.不省略不提示"></textEllipsis>
+        </div>
+        <div style="width: 300px;" v-if="b">
+          <textEllipsis teText="4.超出范围就省略Hover提示全部"></textEllipsis>
+        </div>
+      </div>
+
 <!--        <div class="signOut-block">-->
 <!--            <van-button type="primary" round size="normal" class="lr-btn" @click="backMp">返回小程序</van-button>-->
 <!--        </div>-->
@@ -78,16 +100,26 @@
 
 <script>
     import { mapGetters, mapActions } from "vuex";
+    import textEllipsis from '../../components/textEllipsis/index.vue';
     export default {
         name: "mine",
         data(){
             return {
                 number:null,
                 userData:{},
-                isShow:false
+                isShow:false,
+                a:false,
+                b:false
             }
         },
-        methods:{
+      components:{
+        textEllipsis
+      },
+      mounted() {
+        this.a = true
+        this.b = true
+      },
+      methods:{
             ...mapActions(["signOut"]),
             openTipBlock(){
                 this.$tipBlock.show()
