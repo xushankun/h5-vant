@@ -115,6 +115,12 @@ export default new Router({
             meta:{title:'demotantan'},
             component: () => import(/* webpackChunkName: "demotantan" */ './views/card/demotantan/demotantan')
         },
+        {
+            path: '/rsa',
+            name: 'rsa',
+            meta:{title:'rsa'},
+            component: () => import(/* webpackChunkName: "rsa" */ './components/jsencrypt')
+        },
 
     ]
 })

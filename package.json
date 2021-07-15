@@ -16,6 +16,8 @@
     "core-js": "^2.6.5",
     "css-doodle": "^0.7.4",
     "intersection-observer": "^0.11.0",
+    "js-base64": "^3.6.1",
+    "jsencrypt": "^3.2.0",
     "vant": "^2.2.16",
     "vue": "^2.6.10",
     "vue-advanced-cropper": "^0.13.1",
