@@ -58,11 +58,6 @@
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/vueIntersect')">元素与可视区域的交叉</van-button>
         </div>
-
-      <div>
-<!--        this.$tipBlock.open()-->
-        <van-button type="primary" round size="normal" class="lr-btn" @click="openTipBlock">打开tipBlock</van-button>
-      </div>
       <div class="signOut-block">
         1.可通过js主动调用组件<br>
         2.body外层插入组件
