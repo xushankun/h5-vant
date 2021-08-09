@@ -21,9 +21,9 @@ Locale.use('en-US', enUS)
 Vue.use(Vant)
 Vue.prototype.api = API
 
-// console.log(process.env.NODE_ENV)
-// import VConsole from 'vconsole'
-// new VConsole()
+console.log(process.env.NODE_ENV)
+import VConsole from 'vconsole'
+new VConsole()
 
 // ---------------------------全局组件--------------------------------
 //在这引入全局组件【可通过js调用】
