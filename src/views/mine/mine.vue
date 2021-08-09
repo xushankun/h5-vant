@@ -105,12 +105,14 @@
             return {
                 number:null,
                 userData:{},
-                isShow:false,
-              positionInfo:''
+                isShow:false
             }
         },
       components:{
         textEllipsis
+      },
+      mounted() {
+          this.h5GetLocation()
       },
       methods:{
             ...mapActions(["signOut"]),
@@ -135,33 +137,22 @@
                 })
             },
             h5GetLocation(){
-              //检查浏览器是否支持地理位置获取
-              if (navigator.geolocation) {
-                let config = {
-                  enableHighAccuracy: true,     // 位置是否精确获取
-                  timeout: 5000,  // 获取位置允许的最长时间
-                  maximumAge: 0   // 多久更新获取一次位置
-                };
-                navigator.geolocation.getCurrentPosition((res)=>{
-                  console.log(res)
-                  // latitude   十进制数的纬度
-                  // longitude  十进制数的经度
-                  let { latitude,longitude } = res.coords;
-                  let msg = `latitude：${latitude}，longitude：${longitude}`
-                  alert(msg)
-                }, (error)=>{
-                  console.log(error)
-                  // error.code 对应如下：
-                  // 0:  不包括其他错误编号中的错误
-                  // 1:  用户拒绝浏览器获取位置信息
-                  // 2:  尝试获取用户信息，但失败了
-                  // 3:   设置了timeout值，获取位置超时了
-                  let errMsg = ['未知错误','用户拒绝浏览器获取位置信息','尝试获取用户信息，但失败了','获取位置超时']
-                  alert(errMsg[error.code])
-                }, config);
-              } else {
-                alert("浏览器不支持获取位置信息");
-              }
+              this.util.h5GetLocation().then(res=>{
+                console.log(res)
+                if(res.success) {
+                  this.$dialog({
+                    title: '坐标',
+                    message: `${res.latitude},${res.longitude}`,
+                    confirmButtonText: '确认'
+                  });
+                } else {
+                  this.$dialog({
+                    title: '提示',
+                    message: `${res.message}`,
+                    confirmButtonText: '确认'
+                  });
+                }
+              })
             },
         },
         computed: {

@@ -6,6 +6,7 @@ import Vant from 'vant'
 // import 'vant/lib/index.css';
 import router from './router'
 import './assets/iconfont/iconfont.css'
+import util from "./lib/util";
 import store from './store'
 import API from './lib/API'
 import 'intersection-observer'
@@ -19,6 +20,7 @@ import enUS from 'vant/lib/locale/lang/en-US'
 Locale.use('en-US', enUS)
 
 Vue.use(Vant)
+Vue.prototype.util = util
 Vue.prototype.api = API
 
 console.log(process.env.NODE_ENV)

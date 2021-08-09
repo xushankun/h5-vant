@@ -1,4 +1,6 @@
 // 获取当前时间戳
+import * as types from '../store/types'
+
 function _now() {
     return +new Date()
 }
@@ -145,6 +147,42 @@ export default {
 
             // 客户信息对接
 
+        })
+    },
+    // ------------------------------------------H5获取位置信息--------------------------------------------
+    h5GetLocation:(config={
+        enableHighAccuracy: true,     // 位置是否精确获取
+        timeout: 5000,  // 获取位置允许的最长时间
+        maximumAge: 0   // 多久更新获取一次位置
+    })=>{
+        return new Promise((resolve) => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((res)=>{
+                    let { latitude,longitude } = res.coords;
+                    resolve({
+                        success:true,
+                        latitude,   // 十进制数的纬度
+                        longitude   // 十进制数的经度
+                    })
+                }, (error)=>{
+                    console.log(error)
+                    // error.code 对应如下：
+                    // 0:  不包括其他错误编号中的错误
+                    // 1:  用户拒绝浏览器获取位置信息
+                    // 2:  尝试获取用户信息，但失败了
+                    // 3:   设置了timeout值，获取位置超时了
+                    let errMsg = ['未知错误','用户拒绝浏览器获取位置信息','尝试获取用户信息，但失败了','获取位置超时']
+                    resolve({
+                        success:false,
+                        message: errMsg[error.code]
+                    })
+                }, config);
+            } else {
+                resolve({
+                    success:false,
+                    message: '浏览器不支持获取位置信息'
+                })
+            }
         })
     }
 }
