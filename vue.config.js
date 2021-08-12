@@ -37,7 +37,7 @@ module.exports = {
     devServer: {
         host: '0.0.0.0',    // 本机ip
         port:'8086',
-        http: true,
+        https: false,
         hotOnly: false,
         // historyApiFallback: true,
         proxy: {                            // 跨域访问地址变为：http://IP地址：8089/api/  +  具体业务
