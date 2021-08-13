@@ -29,7 +29,7 @@ module.exports = {
           }
         }
     },
-    // // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码 (在生产构建时禁用 eslint-loader)。
+    // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码 (在生产构建时禁用 eslint-loader)。
     // lintOnSave: true,
     // 是否为生产环境构建生成 source map？
     productionSourceMap: false,
