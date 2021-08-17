@@ -78,3 +78,17 @@ npm run lint
 
 }
 ```
+
+### 关于详情返回列表滚动条错乱的问题
+```
+1.app.vue 文件的#app样式
+height:100% 改为min-height:100%
+
+2.去掉以下代码【外层组件最好不要出现overflow-y:auto】
+ /*解决ios下列表滚动后返回空白的问题*/
+  .iosTouch {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+3.去掉列表和表单的   window.scroll(0,0)
+```

@@ -93,6 +93,9 @@
       <div class="signOut-block">
         <van-button type="primary" class="lr-btn test-btn" @click="h5GetLocation">H5获取位置信息</van-button>
       </div>
+      <div class="signOut-block">
+        <van-button type="primary" class="lr-btn test-btn" @click="$router.push('/list')">列表</van-button>
+      </div>
     </div>
 </template>
 
@@ -112,7 +115,7 @@
         textEllipsis
       },
       mounted() {
-          this.h5GetLocation()
+
       },
       methods:{
             ...mapActions(["signOut"]),
