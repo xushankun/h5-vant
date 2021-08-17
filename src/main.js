@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'amfe-flexible'
+// 桌面端【PC端小程序使用】mouse 事件转换成对应的 touch 事件
+import '@vant/touch-emulator';
 import Vant from 'vant'
 // 这里因为使用cdn样式，所以不需要再次引入
 // import 'vant/lib/index.css';
