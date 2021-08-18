@@ -61,7 +61,7 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 14px;
 	width: 100%;
-	//min-height: 100vh;
+	min-height: 100vh;
 	box-sizing: border-box;
 }
 .fade-enter-active,
