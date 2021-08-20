@@ -121,6 +121,12 @@ export default new Router({
             meta:{title:'rsa'},
             component: () => import(/* webpackChunkName: "rsa" */ './components/jsencrypt')
         },
+        {
+            path: '/loading',
+            name: 'loading',
+            meta:{title:'loading'},
+            component: () => import(/* webpackChunkName: "loading" */ './components/loading')
+        },
 
     ]
 })

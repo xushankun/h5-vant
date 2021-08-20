@@ -11,6 +11,9 @@
             <div>用户名：{{loginData.loginname}}</div>
             <div>创建时间：{{loginData.create_at}}</div>
         </div>
+      <div class="signOut-block">
+        <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/loading')">loading组件</van-button>
+      </div>
         <div class="signOut-block">
             <van-button type="primary" round size="normal" class="lr-btn" @click="$router.push('/cropper')">上传图片并裁剪</van-button>
         </div>
