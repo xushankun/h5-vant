@@ -1,9 +1,16 @@
 <template>
 	<div id="app">
 		<!--    前进加载后退缓存-->
-		<vue-page-stack>
-			<router-view ></router-view>
-		</vue-page-stack>
+<!--		<vue-page-stack>-->
+<!--			<router-view ></router-view>-->
+<!--		</vue-page-stack>-->
+
+
+    <transition :name="transitionName">
+      <vue-page-stack>
+        <router-view class="router-view-c" />
+      </vue-page-stack>
+    </transition>
 
 <!--		<router-view :key="key"></router-view>-->
 	</div>
@@ -12,16 +19,28 @@
 <script>
 export default {
 	name: 'app',
+  data(){
+	  return {
+      transitionName: 'forward',
+    }
+  },
 	computed: {
 		// key() {
 		// 	return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
 		// },
 	},
 	mounted() {
-		let a = 1
-		if (a) {
-			return a + 1
-		}
+    window.addEventListener('scroll', function() {
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight;
+      console.log(scrollTop)
+      if (clientHeight + scrollTop >= scrollHeight) {
+        // 检测到滚动至页面底部，进行后续操作
+        // ...
+        console.log('检测滚动到了页面底部')
+      }
+    }, false);
 	},
 	created() {
 		// bind event
@@ -50,6 +69,16 @@ export default {
 		// this.$navigation.on('forward', off)
 		// this.$navigation.off('forward', off)
 	},
+  watch: {
+    '$route': function (to) {
+      console.log(to.params)
+      if (to.params['stack-key-dir'] === 'forward') {
+        this.transitionName = 'forward';
+      } else {
+        this.transitionName = 'back';
+      }
+    }
+  }
 }
 </script>
 
@@ -63,12 +92,23 @@ export default {
 	width: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
+  position: relative;
 }
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.25s;
+
+.router-view-c {
+  position: absolute;
+  transition: opacity 0.5s, transform 0.5s;
+  width: 100%;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-	opacity: 0;
+.forward-enter,
+.back-leave-active {
+  opacity: 0.5;
+  transform: translateX(100%);
 }
+.forward-leave-active,
+.back-enter {
+  opacity: 0.5;
+  transform: translateX(-100%);
+}
+
 </style>

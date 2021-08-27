@@ -2,6 +2,7 @@
   <div class="all-loading-wrap">
     <loadingOne />
     <loadingTwo />
+
   </div>
 </template>
 
