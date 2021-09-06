@@ -16,7 +16,6 @@ rem自适应【包括设置**单独class不用rem**，或单组件**固定fontsi
 关于图片裁剪【vue-advanced-cropper】
 https://norserium.github.io/vue-advanced-cropper/tutorials/recipes.html#getting-result
 
-
 #### 安装依赖
 ```
 cnpm install
