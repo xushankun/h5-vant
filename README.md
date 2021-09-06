@@ -12,7 +12,6 @@ rem自适应【包括设置**单独class不用rem**，或单组件**固定fontsi
 - css-doodle使用
 - 直接打开手机相机**拍照**
 
-
 #### 软件架构
 关于图片裁剪【vue-advanced-cropper】
 https://norserium.github.io/vue-advanced-cropper/tutorials/recipes.html#getting-result
