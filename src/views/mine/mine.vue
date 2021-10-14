@@ -99,6 +99,9 @@
       <div class="signOut-block">
         <van-button type="primary" class="lr-btn test-btn" @click="$router.push('/list')">列表</van-button>
       </div>
+      <div class="signOut-block">
+        <van-button type="primary" class="lr-btn test-btn" @click="$router.push('/scan')">扫一扫</van-button>
+      </div>
     </div>
 </template>
 

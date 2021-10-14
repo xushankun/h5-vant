@@ -16,7 +16,7 @@ export default new Router({
             path: '/login',
             name: 'login',
             meta:{title:'登录',noLogin:true},
-            component: () => import(/* webpackChunkName: "login" */ './views/login/login.vue')
+            component: () => import('./views/login/login.vue')
         },
         {
             path: '/404',
@@ -126,6 +126,12 @@ export default new Router({
             name: 'loading',
             meta:{title:'loading'},
             component: () => import(/* webpackChunkName: "loading" */ './components/loading')
+        },
+        {
+            path: '/scan',
+            name: 'scan',
+            meta:{title:'scan'},
+            component: () => import(/* webpackChunkName: "scan" */ './components/scan/index')
         },
 
     ]
