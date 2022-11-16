@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="iw-list">
-      <div v-for="(item,index) in 100" :key="index">
+      <div v-for="(item,index) in list" :key="index">
         <div data-type="task" :data-id="item" class="item-block">{{item}}-测试元素
         </div>
       </div>
@@ -23,11 +23,18 @@ export default {
   name: 'intersect',
   data () {
     return {
+      list:[],
       //需要展示的id的集合
       showList: [],
     }
   },
   created() {
+
+  },
+  mounted() {
+    for(let i=0;i<100;i++){
+      this.list.push(i)
+    }
     this.initElementSensor()
   },
   methods:{
@@ -40,6 +47,7 @@ export default {
         const obserRef = new IntersectionObserver((entries) => {
           // entries：root视口内的所有子元素集合
           entries.forEach(v => {
+            console.log(v)
             const { id } = v.target.dataset
             let isIncludes = _that.showList.filter(_item=> _item.id === id).length
             if(v.isIntersecting && !isIncludes){
@@ -111,7 +119,7 @@ export default {
     height: 100vh;
     border: 1px solid red;
     .item-block {
-      height: 80px;
+      height: 100px;
       display: flex;
       align-items: center;
       border-bottom: 1px solid #eee;
